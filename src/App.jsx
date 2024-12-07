@@ -71,7 +71,7 @@ const App = () => {
                 </div>
               </div>
               <div className='ml-auto cursor-pointer'>
-                {isClicked? <FaToggleOn className='text-white' size={32} onClick={handleToggle}/>:<FaToggleOff size={32} onClick={handleToggle}/>}
+                {isClicked? <FaToggleOn size={32} onClick={handleToggle}/>:<FaToggleOff className='text-white' size={32} onClick={handleToggle}/>}
               </div>
               <div className="hidden md:block">
                 <div className="ml-4 flex items-center md:ml-6">
