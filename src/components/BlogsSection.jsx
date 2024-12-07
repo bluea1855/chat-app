@@ -1,3 +1,5 @@
+import { useSelector } from 'react-redux';
+
 const posts = [
   {
     id: 1,
@@ -54,14 +56,18 @@ const posts = [
   ];
   
   export default function BlogsSection() {
+    const isClicked = useSelector((state) => state.click_redux_slice.isClicked);
+
     return (
-      <div className="bg-slate-100 py-24 sm:py-32">
+      <div className={isClicked ? 'bg-slate-100 py-24 sm:py-32':'bg-black py-24 sm:py-32'}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <h2 className={isClicked ? 'text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl':
+              'text-3xl font-bold tracking-tight text-slate-100 sm:text-4xl'}>
               From the blog
             </h2>
-            <p className="mt-2 text-lg leading-8 text-gray-600">
+            <p className={isClicked ? 'mt-2 text-lg leading-8 text-gray-600':
+              'mt-2 text-lg leading-8 text-gray-400'}>
               Learn how to grow your business with our expert advice.
             </p>
           </div>
@@ -100,13 +106,13 @@ const posts = [
                     className="h-10 w-10 rounded-full bg-gray-50"
                   />
                   <div className="text-sm leading-6">
-                    <p className="font-semibold text-gray-900">
+                    <p className={isClicked ? 'font-semibold text-gray-900':'font-semibold text-slate-100'}>
                       <a href={post.author.href}>
                         <span className="absolute inset-0" />
                         {post.author.name}
                       </a>
                     </p>
-                    <p className="text-gray-600">{post.author.role}</p>
+                    <p className={isClicked ? 'text-gray-600':'text-gray-400'}>{post.author.role}</p>
                   </div>
                 </div>
               </article>
