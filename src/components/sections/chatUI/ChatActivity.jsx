@@ -8,7 +8,7 @@ export default function ChatActivity(props) {
     return (
       <ul
         role="list"
-        className={isClicked ? 'divide-y bg-white p-4 rounded-3xl divide-gray-100' : 'divide-y bg-white p-4 rounded-3xl divide-gray-100 bg-black text-white'}
+        className={isClicked ? 'divide-y bg-white p-4 rounded-3xl divide-gray-100' : 'divide-y p-4 rounded-3xl divide-gray-100 bg-black text-white'}
       >
         {people?.map((person, index) => (
           <li key={index} className="flex justify-between gap-x-6 py-5">
