@@ -6,8 +6,11 @@ import BrandsIncluded from "../../BrandsIncluded";
 import TeamSection from "../../TeamSection";
 import BlogsSection from "../../BlogsSection";
 import ApplicationCover from "../../ApplicationCover";
+import { useSelector } from 'react-redux';
 
 function Dashboard() {
+  const isClicked = useSelector((state) => state.click_redux_slice.isClicked);
+  
   return (
     <>
       <PageWrapper
@@ -25,7 +28,7 @@ function Dashboard() {
       </PageWrapper>
       <TeamSection />
       <div className="flex flex-col justify-center items-center h-64">
-        <h1 className="text-7xl font-semibold">Strategies Explained</h1>
+        <h1 className={isClicked ? 'text-7xl font-semibold text-black':'text-white text-7xl font-semibold'}>Strategies Explained</h1>
       </div>
       <ApplicationCover />
       <div className="flex flex-col md:flex-row justify-evenly items-center p-14 mt-10 pb-8 gap-20">
