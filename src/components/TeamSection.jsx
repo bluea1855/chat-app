@@ -1,3 +1,5 @@
+import { useSelector } from 'react-redux';
+
 const people = [
     {
       name: "Leslie Alexander",
@@ -33,14 +35,16 @@ const people = [
   ];
   
   export default function TeamSection() {
+    const isClicked = useSelector((state) => state.click_redux_slice.isClicked);
+
     return (
-      <div className="bg-slate-100 py-24 sm:py-32">
+      <div className={isClicked ? 'bg-slate-100 py-24 sm:py-32':'bg-slate-900 py-24 sm:py-32'}>
         <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <h2 className={isClicked ? 'text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl':'text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl'}>
               Meet our leadership
             </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className={isClicked ? 'mt-6 text-lg leading-8 text-gray-600':'mt-6 text-lg leading-8 text-gray-300'}>
             At the heart of our company is a diverse and dynamic leadership team, each bringing unique expertise, vision, and passion to drive our success. From innovative technology to strategic financial management, our leaders work collaboratively to steer the company towards growth and excellence.
             </p>
           </div>
@@ -57,7 +61,7 @@ const people = [
                     className="h-16 w-16 rounded-full"
                   />
                   <div>
-                    <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">
+                    <h3 className={isClicked? 'text-base font-semibold leading-7 tracking-tight text-gray-900':'text-base font-semibold leading-7 tracking-tight text-gray-100'}>
                       {person.name}
                     </h3>
                     <p className="text-sm font-semibold leading-6 text-indigo-600">
