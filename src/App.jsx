@@ -42,7 +42,7 @@ const App = () => {
   return (
     <>
       <div className={isClicked? 'min-h-full bg-gradient-to-l from-white to-slate-300':
-        'min-h-full bg-gradient-to-l from-gray-900 to-black'}>
+        'min-h-full bg-gradient-to-l from-gray-700 to-black'}>
         
         <Disclosure as="nav" className={isClicked? 'bg-white':'bg-black'}>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
