@@ -55,7 +55,7 @@ export const connects = [
       name: "Tom Cook 2",
       email: "tom.cook@example.com",
       role: "Director of Product",
-      imageUrl: "",
+      imageUrl: "https://letsenhance.io/static/a31ab775f44858f1d1b80ee51738f4f3/11499/EnhanceAfter.jpg",
       lastSeen: null,
     },
   ];
