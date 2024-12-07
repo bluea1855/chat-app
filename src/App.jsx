@@ -2,7 +2,9 @@ import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuIt
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { FaToggleOn } from "react-icons/fa";
 import { FaToggleOff } from "react-icons/fa";
-import { useState } from 'react';
+// import { useState } from 'react';
+import { toggleClick } from '../../../redux/clickSlice';
+import { useSelector, useDispatch } from 'react-redux';
 
 import Dashboard from './components/sections/dashboard/Dashboard';
 import Banner from './components/Banner';
@@ -30,22 +32,23 @@ function classNames(...classes) {
 }
 
 const App = () => {
-  const [state, setState] = useState(true);
+  const isClicked = useSelector((state) => state.click_redux_slice.isClicked);
+  const dispatch = useDispatch();
 
   const handleToggle = () => {
-    setState(!state);
+    dispatch(toggleClick()); 
   };
 
   return (
     <>
       <div className="min-h-full bg-gradient-to-l from-white to-slate-300">
         
-        <Disclosure as="nav" className={state? 'bg-gray-800':'bg-white'}>
+        <Disclosure as="nav" className={isClicked? 'bg-gray-800':'bg-white'}>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
-                <p className={state? 'text-white flex flex-col justify-center items-center text-xl h-8 w-fit font-bold':'text-black flex flex-col justify-center items-center text-xl h-8 w-fit font-bold'}>React-Chat</p>
+                <p className={isClicked? 'text-white flex flex-col justify-center items-center text-xl h-8 w-fit font-bold':'text-black flex flex-col justify-center items-center text-xl h-8 w-fit font-bold'}>React-Chat</p>
                 </div>
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
@@ -55,7 +58,7 @@ const App = () => {
                         href={item.href}
                         aria-current={item.current ? 'page' : undefined}
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                          item.current ? 'bg-gray-900 text-white' : 'text-gray-400 hover:bg-gray-700 hover:text-white',
                           'rounded-md px-3 py-2 text-sm font-medium',
                         )}
                       >
@@ -66,7 +69,7 @@ const App = () => {
                 </div>
               </div>
               <div className='ml-auto cursor-pointer'>
-                {state? <FaToggleOn className='text-white' size={32} onClick={handleToggle}/>:<FaToggleOff size={32} onClick={handleToggle}/>}
+                {isClicked? <FaToggleOn className='text-white' size={32} onClick={handleToggle}/>:<FaToggleOff size={32} onClick={handleToggle}/>}
               </div>
               <div className="hidden md:block">
                 <div className="ml-4 flex items-center md:ml-6">
@@ -171,7 +174,7 @@ const App = () => {
         {/* </header> */}
         
         <main>
-            <Dashboard state={state} />  
+            <Dashboard />  
         </main>
       </div>
     </>
