@@ -2,7 +2,7 @@ import { Disclosure, Menu } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { FaToggleOn } from "react-icons/fa";
 import { FaToggleOff } from "react-icons/fa";
-import { toggleClick } from '../../../redux/clickSlice';
+import { toggleClick } from './redux/clickSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Dashboard from './components/sections/dashboard/Dashboard';
