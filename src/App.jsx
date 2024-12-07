@@ -42,14 +42,15 @@ const App = () => {
   return (
     <>
       <div className={isClicked? 'min-h-full bg-gradient-to-l from-white to-slate-300':
-        'min-h-full bg-gradient-to-l from-gray-800 to-gray-600'}>
+        'min-h-full bg-gradient-to-l from-gray-900 to-black'}>
         
-        <Disclosure as="nav" className={isClicked? 'bg-white':'bg-gray-800'}>
+        <Disclosure as="nav" className={isClicked? 'bg-white':'bg-black'}>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
-                <p className={isClicked? 'text-white flex flex-col justify-center items-center text-xl h-8 w-fit font-bold':'text-black flex flex-col justify-center items-center text-xl h-8 w-fit font-bold'}>React-Chat</p>
+                <p className={isClicked? 'text-black flex flex-col justify-center items-center text-xl h-8 w-fit font-bold':
+                  'text-white flex flex-col justify-center items-center text-xl h-8 w-fit font-bold'}>React-Chat</p>
                 </div>
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
