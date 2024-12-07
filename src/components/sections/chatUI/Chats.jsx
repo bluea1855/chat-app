@@ -1,4 +1,4 @@
-
+import { useSelector } from 'react-redux';
 
 function otherSenderJSX(commentProp, index) {
     return (
@@ -39,9 +39,11 @@ function otherSenderJSX(commentProp, index) {
   }
   
   export default function Chats(props) {
+
+  const isClicked = useSelector((state) => state.click_redux_slice.isClicked);
   
     return (
-      <div className="space-y-4 p-10 bg-white m-2 rounded-3xl mb-6">
+      <div className={isClicked ? 'space-y-4 p-10 bg-white m-2 rounded-3xl mb-6' : 'space-y-4 p-10 m-2 rounded-3xl mb-6 bg-black'}>
         {props.comments?.length ? props.comments.map((comment, index) => {
           const isOtherUser = comment.chat_author === "blue";
           return isOtherUser ? otherSenderJSX(comment, index) : senderJSX(comment, index);
