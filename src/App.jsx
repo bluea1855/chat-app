@@ -42,7 +42,7 @@ const App = () => {
   return (
     <>
       <div className={isClicked? 'min-h-full bg-gradient-to-l from-white to-slate-300':
-        'min-h-full bg-gradient-to-l from-gray-700 to-black'}>
+        'min-h-full bg-gradient-to-l from-gray-900 to-black'}>
         
         <Disclosure as="nav" className={isClicked? 'bg-white':'bg-black'}>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -170,8 +170,9 @@ const App = () => {
         </Disclosure>
         <Banner />
         {/* <header className="bg-gradient-to-l from-blue-200 via-pink-300 to-blue-700 shadow"> */}
-          <div className="mx-auto w-full pl-12 py-5 pb-2 bg-white">
-            <h1 className="text-3xl font-semibold tracking-tight text-slate-700">Chat Dashboard</h1>
+          <div className={isClicked ? 'mx-auto w-full pl-12 py-5 pb-2 bg-white':
+            'mx-auto w-full pl-12 py-5 pb-2 bg-black'}>
+            <h1 className={isClicked ? 'text-3xl font-semibold tracking-tight text-slate-700':'text-3xl font-semibold tracking-tight text-slate-200'}>Chat Dashboard</h1>
           </div>
         {/* </header> */}
         
