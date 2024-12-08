@@ -5,7 +5,7 @@ import { FaToggleOff } from "react-icons/fa";
 // import { useState } from 'react';
 import { toggleClick } from './redux/clickSlice';
 import { useSelector, useDispatch } from 'react-redux';
-
+import { Link } from "react-router-dom";
 import Dashboard from './components/sections/dashboard/Dashboard';
 import Banner from './components/Banner';
 
@@ -110,8 +110,10 @@ const App = () => {
                     </Menu>
                   ) : (
                     <div className='relative ml-3'>
-                      <button to="/sign-in" className='rounded-md px-3 py-2 text-sm font-medium bg-gray-900 text-white border-2 
-                      hover:bg-white border-gray-900 hover:text-gray-900'>Login</button>
+                      <Link to="/sign-up">
+                      <button className='rounded-md px-3 py-2 text-sm font-medium bg-gray-900 text-white border-2 
+                      hover:bg-white border-gray-900 hover:text-gray-900'>LOGIN</button>
+                    </Link>
                     </div>
                   )}
                 </div>
