@@ -27,6 +27,8 @@ const userNavigation = [
   { name: 'Sign out', href: '#' },
 ]
 
+isLogin = false;
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -85,6 +87,7 @@ const App = () => {
                   </button>
 
                   {/* Profile dropdown */}
+                { isLogin ?
                   <Menu as="div" className="relative ml-3">
                     <div>
                       <MenuButton className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -103,7 +106,12 @@ const App = () => {
                       </MenuItem>
                     ))}
                     </MenuItems>
-                  </Menu>
+                  </Menu> :
+                  <div className='relative ml-3'>
+                    <button className='rounded-md px-3 py-2 text-sm font-medium bg-gray-900 text-white border-2 
+                    hover:bg-white border-gray-900 hover:text-gray-900'>Login</button>
+                  </div>
+                }
                 </div>
               </div>
               <div className="-mr-2 flex md:hidden">
