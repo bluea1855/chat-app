@@ -110,7 +110,7 @@ const App = () => {
                     </Menu>
                   ) : (
                     <div className='relative ml-3'>
-                      <Link to="/sign-up">
+                      <Link to="/sign-in">
                       <button className='rounded-md px-3 py-2 text-sm font-medium bg-gray-900 text-white border-2 
                       hover:bg-white border-gray-900 hover:text-gray-900'>LOGIN</button>
                     </Link>
