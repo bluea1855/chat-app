@@ -104,7 +104,7 @@ export default function SignIn() {
                 <button
                   type="button"
                   onClick={onNavigateToChatRoom}
-                  className="flex w-full justify-center rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-white hover:text-red-600 border-2 border-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+                  className={classNames(isclicked ? 'hover:bg-white': 'hover:bg-gray-900','flex w-full justify-center rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:text-red-600 border-2 border-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600',)}
                 >
                   Sign in
                 </button>
