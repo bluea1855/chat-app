@@ -1,7 +1,9 @@
 import { useSelector } from 'react-redux';
-
 export default function BrandsIncluded() {
     const isClicked = useSelector((state) => state.click_redux_slice.isClicked);
+    function classNames(...classes) {
+        return classes.filter(Boolean).join(' ')
+    }
     return (
       <div className={isClicked ? 'bg-white py-24 sm:py-32':'bg-gray-900 py-24 sm:py-32'}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -49,4 +51,3 @@ export default function BrandsIncluded() {
       </div>
     )
   }
-  
