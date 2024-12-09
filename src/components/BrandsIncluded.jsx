@@ -5,7 +5,7 @@ export default function BrandsIncluded() {
         return classes.filter(Boolean).join(' ')
     }
     return (
-      <div className={isClicked ? 'bg-white py-24 sm:py-32':'bg-gray-900 py-24 sm:py-32'}>
+      <div className={isClicked ? 'bg-white py-24 sm:py-32':'bg-black py-24 sm:py-32'}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className={classNames(isClicked ? 'text-gray-900':'text-white','text-center text-lg font-semibold leading-8',)}>
             Trusted by the world’s most innovative teams
